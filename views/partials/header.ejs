@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head lang="fr" dir="ltr">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>accueil</title>
+        <link rel="stylesheet" href=<%= css %>>
+        <script src="../jquery/jquery.js"></script>
+    </head>
+    <body>
+        <div class="sidemenu">
+            <% if (user == null) { %>
+                <label onclick="home()"> Home</label>
+                <label onclick="register()"> Register</label>
+                <label onclick="login()"> Login</label>
+            <% } else { %>
+                <label id="login">Bonjour <%= user.login %></label>
+                <label onclick="home()"> Home</label>
+                <label onclick="sharedmemos()"> Shared memos</label>
+                <label onclick="addmemo()"> New memo</label>
+                <label onclick="logout()"> Logout</label>
+            <% } %>
+        </div>

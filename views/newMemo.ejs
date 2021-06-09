@@ -1,0 +1,44 @@
+<% css = "../../css/newMemo.css" %>
+<%- include('partials/header.ejs') %>
+    <% if (user != null) { %>
+        <% if (memo == null) { %>
+            <form id="newMemo" action="/add/memo" method="POST">
+                <textarea name="content" cols="30" rows="10" maxlength="200" placeholder="Right your mind just here !" onkeyup="test(this)" required></textarea>
+                <button type="submit">Create</button>
+            </form>
+        <% } else { %>
+            <% if (memo.owner != user.id) { %>
+                <form id="newMemo" action="/edit/memo?page=sharedBy" method="POST">
+            <% } else { %>
+                <form id="newMemo" action="/edit/memo?page=main" method="POST">
+            <% } %>
+                <input name="user_id" class="id" value=<%= user.id %>></input>
+                <input name="memo_id" class="id" value=<%= memo.id %>></input>
+                <textarea name="content" cols="30" rows="10" maxlength="200" onkeyup="check(this)"><%= memo.content %></textarea>
+                <button type="submit">Edit</button>
+            </form>
+        <% } %>
+        <script>
+            $('.id').hide()
+            function check(input) {
+                var text = input.value.split('\n')
+                for (var val in text) {
+                    if (text[val].length == 15)
+                        text[val] += '\n'
+                }
+                if (text.length > 8) {
+                    input.value = ""
+                    for (var i = 0; i < 9; i++) {
+                        if (i < 8)
+                            input.value += text[i].substring(0, 15) + '\n'
+                        else
+                            input.value += text[i].substring(0, 15)
+                    }
+                }
+            }
+        </script>
+    <% } else { %>
+        <h1>You are not connected</h1>
+    <% } %>
+</body>
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,36 @@
+<% css = "../../css/index.css" %>
+<%- include('partials/header.ejs') %>
+    <div>
+        <div class="main">
+            <% if (user != null) { %>
+                <% if (page == 'share') { %>
+                <div class="share">
+                    <form id="shareForm" method="POST">
+                        <label><input type="checkbox" name="write">Write</label>
+                        <input cols="9" rows="1" type="text" name="user" placeholder="Share to" required></input>
+                        <input type="image" src="../images/send.png" alt="Submit">
+                        <% if (message != null) { %>
+                            <Label class="message"><%= message %></Label>
+                        <% } %>
+                    </form>
+                </div>
+                <% } %>
+                <ul id="memos"></ul>
+                    <% if (page == 'main') { %>
+                        <script src="../scripts/memos.js"></script>
+                    <% } else if (page == 'shareBy') { %>
+                        <script src="../scripts/shareBy.js"></script>
+                    <% } else if (page == 'share') { %>
+                        <script src="../scripts/shareWith.js"></script>
+                    <% } %>
+            <% } else { %>
+                <ul>
+                <% for (i = 0; i < 15; i++) { %>
+                    <li class="memo"></li>
+                <% } %>
+                </ul>
+            <% } %>
+        </div>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %>

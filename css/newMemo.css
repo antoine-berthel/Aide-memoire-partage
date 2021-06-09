@@ -1,0 +1,32 @@
+@import url('main.css');
+
+#newMemo {
+    margin-left: 40%;
+    margin-top: 15vh;
+    width: 500px;
+}
+
+#newMemo textarea {
+    resize:none;
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:15em;
+    width:15em;
+    padding:1em;
+    font-size: x-large;
+}
+
+#newMemo button {
+    box-shadow: inset -3px -3px 10px #cc870a;
+    box-shadow: inset -3px -3px 10px #cc870a;
+    background-color: #f7b31c;
+    height: 50px;
+    width: 11em;
+    color: white;
+    border-radius: 15px;
+    font-size: x-large;
+    margin-left: .9em;
+    margin-top: .5em;
+}

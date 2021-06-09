@@ -1,0 +1,23 @@
+<% css = "../../css/login_register.css" %>
+<%- include('partials/header.ejs') %>
+    <div class="accueil">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <div>
+                <label>login :</label>
+                <input type="text" name="login" required>
+            </div>
+            <div>
+                <label>password :</label>
+                <input type="password" name="pwd" required>
+            </div>
+            <div class="status">
+                <button type="submit" name="connect">connect</button>
+                <% if (message.length > 0) { %>
+                    <Label><%= message %></Label>
+                <% } %>
+            </div>
+        </form>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %>

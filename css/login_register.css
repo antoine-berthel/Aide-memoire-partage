@@ -1,0 +1,63 @@
+@import url('main.css');
+
+.accueil {
+    margin-left: 35%;
+    margin-top: 40vh;
+    list-style:none;
+    text-decoration:none;
+    color:#000;
+    background:rgb(204, 255, 235);
+    width:500px;
+    padding:1em;
+}
+
+.accueil {
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25);
+    position:relative;
+    z-index:5;
+}
+
+.accueil h1 {
+    text-align: center;
+}
+
+.accueil form label {
+    display: inline-block;
+    width: 170px;
+    text-align: left;
+}
+
+.accueil form input {
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+input:focus {
+    border-color: rgb(97, 97, 97);
+}
+  
+.accueil form button {
+    margin-left: .5em;
+}
+
+.accueil form div + div {
+    margin-top: 1em;
+}
+
+.status {
+    flex-direction: row;
+    padding-left: 170px;
+}
+
+.status label {
+    display: inline-block;
+    text-align: right;
+}
+
+.statut button {
+    float: left;
+}

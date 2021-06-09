@@ -1,0 +1,102 @@
+@import url('main.css');
+
+ul {
+    overflow:hidden;
+    padding-left:5em;
+    padding-right:5em;
+    padding-top:10px;
+
+}
+
+.memo label {
+    text-align: center;
+    font-family: cursive;
+    font-size: 25px
+}
+
+.memo p {
+    white-space: pre-wrap;
+    margin: 2em;
+    overflow: hidden;
+}
+
+.memo {
+    list-style:none;
+    text-decoration:none;
+    color:#000;
+    background:rgb(250, 252, 160);
+    display:block;
+    height:15em;
+    width:15em;
+    padding:1em;
+    margin:1em;
+    float:left;
+}
+
+.memo:nth-child(even){
+    transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background:rgb(204, 232, 255);
+}
+
+.memo:nth-child(3n){
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background:rgb(255, 204, 204);
+}
+
+.memo .img {
+    display: inline-flex;
+    float: right;
+}
+
+.memo:hover,.memo:focus {
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25);
+    position:relative;
+    z-index:5;
+}
+
+.memo img {
+    width: 13px;
+    height: 13px;
+    margin-left: 5px;
+}
+
+img:hover {
+    width: 20px;
+    height: 20px;
+}
+
+.share {
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25);
+    position:relative;
+    z-index:5;
+    display: inline-block;
+    background:#ffc;
+    margin-left: 10%;
+    height: 2.5em;
+    flex-direction: row;
+}
+
+.share input {
+    padding-left: 5px;
+    vertical-align: bottom;
+    position: relative;
+    top: 4px;
+    overflow: hidden;
+}
+
+.share input[type=image] {
+    width: 30px;
+    height: 30px;
+}
+
+.share .message {
+    padding-left: 5px;
+    padding-right: 5px;
+}
